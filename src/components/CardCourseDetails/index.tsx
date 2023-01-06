@@ -8,7 +8,7 @@ interface CardCourseDetails{
 
 export function CardCourseDetails({count,icon,title}:CardCourseDetails){
     return(
-        <HStack  w='100%' bg='gray.400' px='4' py='6' >
+        <HStack  w='100%' bg='gray.400' px='4' py='4'  >
             {icon}
             <Text color='white.900' fontWeight='bold' ml='8px'>
             {count}

@@ -25,6 +25,7 @@ export function Button({ title,w='full', variant,icon,border=false,...rest}: Pro
           fontFamily="heading"
           fontWeight='bold'
           fontSize="sm"
+          
         >
                 {title}
             </Text>
