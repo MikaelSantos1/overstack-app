@@ -1,33 +1,67 @@
-import { Box, Flex, HStack, PlayIcon, Text, VStack } from "native-base";
-import { useState} from 'react'
-export function LessonList() {
-    const [activeLesson,seActiveLesson]= useState()
+import { Box, Flex, HStack, PlayIcon, FlatList, Text, VStack, View } from "native-base";
+import { useState } from 'react'
+import { TouchableOpacity } from "react-native";
+
+interface PropsData {
+    chapterTitle: string
+    lessonTotalCount: number
+    completedLessons: number
+
+    lessons: {
+        id: number,
+        duration: string
+        title: string
+        completed: boolean
+    }[]
+}
+interface Props {
+    data: PropsData[]
+}
+export function LessonList({ data }: Props) {
+    const [activeLesson, setActiveLesson] = useState()
+    console.log(data)
     return (
-        <VStack>
+        <View w='100%'>
             <Flex bg='gray.300'>
                 <VStack p='4' h='90px'>
-                    <Text color='white.900' fontWeight='bold'>Titulo da cyruso</Text>
-                    <Text color='white.900' fontWeight='bold'>0 de8 aulas concluidas</Text>
+                    <Text color='white.900' fontWeight='bold'>
+                        {data?.map((item) => item.chapterTitle)}
+                    </Text>
+                    <Text color='white.900' fontWeight='bold'>
+                        {data?.map((item) => item.completedLessons)} de {data?.map((item) => item.lessonTotalCount)} aulas concluidas
+
+                    </Text>
                 </VStack>
             </Flex>
-            <HStack bg='gray.400' 
-            p='4' 
-            justifyContent='space-around' 
-            borderWidth={1}
-            borderTopColor='white.200'
-            borderBottomColor='white.200'
-            alignItems='center'
-            >
-                <PlayIcon color='white.900' />
-                <VStack >
-                    <Text color='white.900' fontWeight='bold'> Trailer- que vamos aprender</Text>
-                    <Text color='white.200' fontWeight='bold' fontSize='xs'> 01:13</Text>
-                </VStack>
 
-                <Box w='20px' h='20px' borderRadius='9999999px' bg='gray.300' />
+            {data[0].lessons.map((item) => (
 
-               
-            </HStack>
-        </VStack>
+                <HStack
+
+                    w='100%'
+                    bg='gray.400'
+                    p='4'
+                    justifyContent='space-around'
+                    borderWidth={1}
+                    borderTopColor='white.200'
+                    borderBottomColor='white.200'
+                    alignItems='center'
+                >
+                    <PlayIcon color='white.900' />
+                    <VStack >
+                        <Text color='white.900' fontWeight='bold'>{item.title}</Text>
+                        <Text color='white.200' fontWeight='bold' fontSize='xs'> {item.duration}</Text>
+                    </VStack>
+
+                    <Box w='20px' h='20px' borderRadius='9999999px' bg='gray.300' />
+
+
+                </HStack>
+
+
+            ))}
+
+
+        </View>
     )
 }
