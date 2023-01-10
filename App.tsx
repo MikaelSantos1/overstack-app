@@ -6,6 +6,7 @@ import { NativeBaseProvider } from 'native-base';
 import { Home } from '@screens/Home';
 import { THEME } from './src/theme';
 import { Details } from '@screens/Details';
+import VideoPlayer from '@screens/Video';
 export default function App() {
   const [fontsLoaded]=useFonts({Roboto_400Regular,Roboto_700Bold,Roboto_900Black})
   return (
@@ -16,12 +17,10 @@ export default function App() {
       translucent
       />
       {
-        fontsLoaded?<Details/>:<View/>
+        fontsLoaded?<VideoPlayer/>:<View/>
       }
       
    
     </NativeBaseProvider>
   );
 }
-
-
