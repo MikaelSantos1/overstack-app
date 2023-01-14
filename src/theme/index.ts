@@ -13,7 +13,7 @@ export const THEME = extendTheme({
         400: "rgba(32,34,39,.6)",
         300: '#202227',
         200: '#C4C4CC',
-        100: '#EEEEF2'
+        100: '#313338'
       },
       white: {
         900:'#FFFFFF',

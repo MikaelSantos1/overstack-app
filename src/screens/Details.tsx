@@ -4,14 +4,14 @@ import Clock from '@assets/clock.svg'
 import Css from '@assets/css.png'
 import ReactSvg from '@assets/react.png'
 import Folder from '@assets/folder.svg'
-import { Button } from "@components/Button";
-import { Card } from "@components/Card";
-import { CardCourseDetails } from "@components/CardCourseDetails";
-import { About } from "@components/About";
-import { Tags } from "@components/Tags";
-import { LessonCard } from "@components/LessonCard";
-import { ComplementaryMaterial } from "@components/ComplementaryMaterial";
-import { CertificateCard } from "@components/CertificateCard";
+import { Button } from "@components/commons/Button";
+import { Card } from "@components/commons/Card";
+import { CardCourseDetails } from "@components/commons/CardCourseDetails";
+import { About } from "@components/commons/About";
+import { Tags } from "@components/commons/Tags";
+import { LessonCard } from "@components/commons/LessonCard";
+import { ComplementaryMaterial } from "@components/commons/ComplementaryMaterial";
+import { CertificateCard } from "@components/commons/CertificateCard";
 export function Details() {
     return (
         <Flex

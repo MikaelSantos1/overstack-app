@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Video, AVPlaybackStatus } from 'expo-av';
 import { Box, Flex } from 'native-base';
-import { Button } from '@components/Button';
+import { Button } from '@components/commons/Button';
 export  function VideoPlayer() {
     const video = React.useRef(null);
     const [status, setStatus] = React.useState({});

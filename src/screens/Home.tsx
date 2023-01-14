@@ -1,5 +1,5 @@
-import { CoursesCarousel } from "@components/CoursesCarousel";
-import { MainCarousel } from "@components/MainCarousel";
+import { CoursesCarousel } from "@components/commons/CoursesCarousel";
+import { MainCarousel } from "@components/pageComponents/MainCarousel";
 import { Text, VStack } from "native-base";
 import Bg from '@assets/react.png'
 import Bg2 from '@assets/css.png'

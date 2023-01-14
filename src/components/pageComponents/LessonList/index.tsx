@@ -16,15 +16,16 @@ interface PropsData {
 }
 interface Props {
     data: PropsData[]
+    activeLesson:number
 }
-export function LessonList({ data }: Props) {
-    const [activeLesson, setActiveLesson] = useState()
-    console.log(data)
+export function LessonList({ data,activeLesson }: Props) {
+   
+    console.log(activeLesson)
     return (
-        <View w='100%'>
+        <View w='100%' mt='4'>
             <Flex bg='gray.300'>
-                <VStack p='4' h='90px'>
-                    <Text color='white.900' fontWeight='bold'>
+                <VStack p='4' h='110px'>
+                    <Text color='white.900' fontWeight='bold' fontSize='md'>
                         {data?.map((item) => item.chapterTitle)}
                     </Text>
                     <Text color='white.900' fontWeight='bold'>
@@ -39,21 +40,25 @@ export function LessonList({ data }: Props) {
                 <HStack
 
                     w='100%'
-                    bg='gray.400'
+                    bg={activeLesson==item.id?'gray.400':'black.900'}
                     p='4'
-                    justifyContent='space-around'
+                    h='80px'
+                    
                     borderWidth={1}
-                    borderTopColor='white.200'
-                    borderBottomColor='white.200'
+                    borderTopColor='gray.100'
+                    borderBottomColor='gray.100'
                     alignItems='center'
                 >
                     <PlayIcon color='white.900' />
-                    <VStack >
-                        <Text color='white.900' fontWeight='bold'>{item.title}</Text>
-                        <Text color='white.200' fontWeight='bold' fontSize='xs'> {item.duration}</Text>
+                    <VStack justifyContent='flex-start' alignItems='flex-start'  ml='6'>
+                        <Text 
+                        textAlign='left'
+                        color='white.900' 
+                        fontWeight='bold'>{item.title }</Text>
+                        <Text color='white.200' fontWeight='bold' fontSize='xs'  textAlign='left'> {item.duration}</Text>
                     </VStack>
 
-                    <Box w='20px' h='20px' borderRadius='9999999px' bg='gray.300' />
+                    <Box w='20px' h='20px' borderRadius='9999999px' bg='gray.300' ml='auto' />
 
 
                 </HStack>

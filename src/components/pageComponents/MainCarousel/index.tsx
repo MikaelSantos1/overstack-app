@@ -1,14 +1,15 @@
 import { Box, FlatList, Flex, HStack, Image, PlayIcon, Stack, Text, VStack } from "native-base";
 import Bg from '@assets/background.png'
 import Bg2 from '@assets/bg.png'
-import { Button } from "@components/Button";
+import { Button } from "@components/commons/Button";
 import { Dimensions, ImageBackground, Platform } from "react-native";
 import Carousel from 'react-native-reanimated-carousel';
 import { useRef, useState, useCallback } from "react";
 import { ItemClick } from "native-base/lib/typescript/components/composites/Typeahead/useTypeahead/types";
-import { Bullet } from "@components/Bullets";
-
+import { Bullet } from "@components/commons/Bullets";
+import { useNavigation} from '@react-navigation/native'
 export function MainCarousel() {
+    const navigate = useNavigation()
     const image = { uri: "https://reactjs.org/logo-og.png" };
     const data = [{
         image: Bg,
@@ -79,6 +80,7 @@ export function MainCarousel() {
                         </Text>
                         <HStack space='10px' justifyContent='center' >
                             <Button
+                            onPress={()=>navigate.navigate('VideoScreen')}
                                 w='45%'
                                 title="Assistir" 
                                 icon={<PlayIcon color='black.900'/>}
