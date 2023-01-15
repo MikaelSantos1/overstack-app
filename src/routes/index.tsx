@@ -1,6 +1,7 @@
 import { useTheme, Box } from 'native-base';
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { AppRoutes } from './tab.routes';
+import { StackRoutes } from './stack.routes';
 
 
 
@@ -13,7 +14,7 @@ export function Routes() {
   return (
     <Box flex={1} bg="gray.700">
       <NavigationContainer theme={theme}>
-     <AppRoutes/>
+     <StackRoutes/>
       </NavigationContainer>
     </Box>
   );

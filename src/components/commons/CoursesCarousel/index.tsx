@@ -19,7 +19,7 @@ export function CoursesCarousel({
 
     const width = Dimensions.get('window').width;
     return (
-        <Flex flex={1} width='100%' bg='black.700' px='10px'>
+        <Flex flex={1} width='100%' bg='black.700' px='10px' h='100%' my='4'>
             <HStack w='100%'>
                 <HStack justifyContent='space-between' w='100%' my='4'>
 

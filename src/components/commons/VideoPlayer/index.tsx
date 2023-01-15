@@ -3,15 +3,18 @@ import { View, StyleSheet } from 'react-native';
 import { Video, AVPlaybackStatus } from 'expo-av';
 import { Box, Flex } from 'native-base';
 import { Button } from '@components/commons/Button';
+import { BackButton } from '../BackButton';
 export  function VideoPlayer() {
     const video = React.useRef(null);
     const [status, setStatus] = React.useState({});
+console.log(status)
 
     return (
         <Flex >
            
-
-        <Box w='100%' h='400px'>
+           <BackButton/>
+        <Box w='100%' h='280px'>
+       
                 <Video
                     ref={video}
                     style={{flex:1}}
@@ -23,9 +26,10 @@ export  function VideoPlayer() {
                     isLooping
                     onPlaybackStatusUpdate={status => setStatus(() => status)}
                 />
-         
+        
          </Box>
-    
+      
+      
         </Flex>
     );
 }

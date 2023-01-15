@@ -1,6 +1,6 @@
 import { CoursesCarousel } from "@components/commons/CoursesCarousel";
 import { MainCarousel } from "@components/pageComponents/MainCarousel";
-import { Text, VStack } from "native-base";
+import { ScrollView, Text, VStack } from "native-base";
 import Bg from '@assets/react.png'
 import Bg2 from '@assets/css.png'
 
@@ -26,7 +26,7 @@ export function Home(){
 
     ]
     return(
-        <VStack  flex={1} >
+        <ScrollView  flex={1} >
             <MainCarousel/>
             <CoursesCarousel
             carouselTitle="Continue assistindo"
@@ -38,6 +38,17 @@ export function Home(){
             data={coursesData}
 
             />
-        </VStack>
+               <CoursesCarousel
+            carouselTitle="Continue assistindo"
+            data={coursesData}
+
+            />
+
+<CoursesCarousel
+            carouselTitle="Continue assistindo"
+            data={coursesData}
+
+            />
+        </ScrollView>
     )
 }

@@ -12,6 +12,7 @@ import { Tags } from "@components/commons/Tags";
 import { LessonCard } from "@components/commons/LessonCard";
 import { ComplementaryMaterial } from "@components/commons/ComplementaryMaterial";
 import { CertificateCard } from "@components/commons/CertificateCard";
+import { BackButton } from "@components/commons/BackButton";
 export function Details() {
     return (
         <Flex
@@ -20,7 +21,9 @@ export function Details() {
 
         >
             <ScrollView >
+               
                 <Box h='450px' w='100%' >
+                <BackButton pl={'10px'}/>
                     <Image
                         source={Bg}
                         alt=''

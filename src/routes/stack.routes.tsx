@@ -2,6 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Details } from '@screens/Details';
 import { Home } from '@screens/Home';
 import VideoScreen from '@screens/Video';
+import { AppRoutes } from './tab.routes';
 
 const {Navigator, Screen} = createStackNavigator();
 
@@ -10,7 +11,7 @@ export function StackRoutes() {
     <Navigator  screenOptions={{
         headerShown: false
     }} initialRouteName={'Home'}>
-      <Screen name="Home" component={Home} />
+      <Screen name="Home" component={AppRoutes} />
 
       <Screen name="Details" component={Details} />
       

@@ -23,10 +23,10 @@ const renderTabBar = props => (
   
   <TabBar
   scrollEnabled
-  style={{backgroundColor:'black'}}
+  style={{backgroundColor:'#0F1116'}}
   indicatorStyle={{ backgroundColor: 'white' }}
   renderLabel={({ route, focused, color }) => (
-    <Text color='white.900' fontWeight='bold'>
+    <Text color={focused?'white.900':'white.200'} fontWeight='bold'>
       {route.title}
     </Text>
   )}

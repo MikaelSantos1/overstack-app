@@ -31,14 +31,15 @@ export function MainCarousel() {
     const [imageIndex, setImageIndex] = useState(0)
 
     const indexChanged = useRef((info:any) => {
-        console.log(info)
+      
         setImageIndex(info.viewableItems[0].index!)
     })
     const viewConfigRef = useRef({ viewAreaCoveragePercentThreshold: 50 })
     return (
 
         <FlatList
-            h='300px'
+            minH='500px'
+            h='100%'
             width={width}
             pagingEnabled
             keyExtractor={item => String(item.couseId)}
@@ -86,6 +87,7 @@ export function MainCarousel() {
                                 icon={<PlayIcon color='black.900'/>}
                                 />
                             <Button
+                            onPress={()=>navigate.navigate('Details')}
                                 variant='outline'
                                 w='45%'
                                 title="Mais detalhes" />
