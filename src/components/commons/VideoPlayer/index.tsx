@@ -10,7 +10,7 @@ export  function VideoPlayer() {
 console.log(status)
 
     return (
-        <Flex >
+        <Flex bg='black.900'>
            
            <BackButton/>
         <Box w='100%' h='280px'>

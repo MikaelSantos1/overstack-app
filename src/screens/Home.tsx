@@ -26,7 +26,7 @@ export function Home(){
 
     ]
     return(
-        <ScrollView  flex={1} >
+        <ScrollView  flex={1} bg='black.700' >
             <MainCarousel/>
             <CoursesCarousel
             carouselTitle="Continue assistindo"

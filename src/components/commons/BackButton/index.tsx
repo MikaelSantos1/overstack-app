@@ -1,7 +1,8 @@
-import { TouchableOpacity} from 'react-native'
+import { Platform, TouchableOpacity} from 'react-native'
 import Arrow from '@assets/arrow-left.svg'
 import { Button } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
+import { getStatusBarHeight } from 'react-native-status-bar-height'
 export function BackButton({...rest}){
     const navigation = useNavigation()
     return(
@@ -10,7 +11,7 @@ export function BackButton({...rest}){
         w={20}
         h={20} 
         variant='unstyled' 
-        mt='70px'
+        mt={Platform.OS==='ios'?getStatusBarHeight():30}
         onPress={()=>navigation.goBack()}
         {...rest}
         >

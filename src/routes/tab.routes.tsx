@@ -7,6 +7,7 @@ import HomeSvg from '@assets/home.svg';
 import HistorySvg from '@assets/history.svg';
 import ProfileSvg from '@assets/profile.svg';
 import { Platform } from "expo-modules-core";
+import { Search } from "@screens/Search";
 const { Screen, Navigator } = createBottomTabNavigator()
 
 export function AppRoutes() {

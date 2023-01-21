@@ -7,7 +7,8 @@ import Carousel from 'react-native-reanimated-carousel';
 import { useRef, useState, useCallback } from "react";
 import { ItemClick } from "native-base/lib/typescript/components/composites/Typeahead/useTypeahead/types";
 import { Bullet } from "@components/commons/Bullets";
-import { useNavigation} from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
+import { Header } from "@components/commons/Header";
 export function MainCarousel() {
     const navigate = useNavigation()
     const image = { uri: "https://reactjs.org/logo-og.png" };
@@ -30,8 +31,8 @@ export function MainCarousel() {
     const width = Dimensions.get('window').width;
     const [imageIndex, setImageIndex] = useState(0)
 
-    const indexChanged = useRef((info:any) => {
-      
+    const indexChanged = useRef((info: any) => {
+
         setImageIndex(info.viewableItems[0].index!)
     })
     const viewConfigRef = useRef({ viewAreaCoveragePercentThreshold: 50 })
@@ -58,7 +59,7 @@ export function MainCarousel() {
                     alignItems='center'
                     bgColor='gray.900'
                 >
-
+                    <Header />
                     <Image
 
                         source={item.image}
@@ -81,13 +82,13 @@ export function MainCarousel() {
                         </Text>
                         <HStack space='10px' justifyContent='center' >
                             <Button
-                            onPress={()=>navigate.navigate('VideoScreen')}
+                                onPress={() => navigate.navigate('VideoScreen')}
                                 w='45%'
-                                title="Assistir" 
-                                icon={<PlayIcon color='black.900'/>}
-                                />
+                                title="Assistir"
+                                icon={<PlayIcon color='black.900' />}
+                            />
                             <Button
-                            onPress={()=>navigate.navigate('Details')}
+                                onPress={() => navigate.navigate('Details')}
                                 variant='outline'
                                 w='45%'
                                 title="Mais detalhes" />
