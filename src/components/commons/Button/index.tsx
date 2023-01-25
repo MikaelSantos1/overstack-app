@@ -3,16 +3,17 @@ interface Props extends IButtonProps {
     title: string;
     w?:string;
     icon?:React.ReactNode
-    border?:boolean
+    border?:boolean,
+    color?:string;
 }
-export function Button({ title,w='full', variant,icon,border=false,...rest}: Props) {
+export function Button({ title,w='full', variant='solid',icon,border=false,color,...rest}: Props) {
     return (
         <ButtonNativeBase
         w={w}
        
         bg={variant === 'outline' ? 'black.900' : 'white.900'}
         borderWidth={1}
-        borderColor="white.900"
+        borderColor={variant === 'outline' ?'white.900'  : 'transparent'}
         rounded={border?"sm":"none"}
         _pressed={{
           bg: variant === 'outline' ? 'gray.500' : 'gray.500'  
